@@ -13,7 +13,7 @@
 - 需在build.gradle添加RecyclerView库的依赖
 - 创建新的 xxAdapter类，继承至RecyclerView.Adapter<RecyclerView.ViewHolder>
 ```
-重写方法：
+ 重写方法：
  onCreateViewHolder()
  onBindViewHolder()
  getItemCount()
@@ -30,5 +30,5 @@ recyclerView.adapter = adapter
 ```
 - 点击事件：需自己给子项具体的View注册点击事件--> 在onCreateViewHolder()中实现（不同于ListView）
 
-
+## Epoxy.RecyclerView
 
