@@ -1,6 +1,6 @@
 # View 事件体系
 
-## View 基础
+## 基础
 
 ### 
 - View 是android 中所有控件的基类
@@ -28,20 +28,22 @@ ACTION_UP：手指从屏幕松开的一瞬间
 
 ### VelocityTracker, GestureDetector & Scroller
 - VelocityTracker: 追踪手指在滑动中的速度
-> 在View的 onTouchEvent方法中追踪当前单击事件的速度
 ```
+在View的 onTouchEvent方法中追踪当前单击事件的速度
 velocityTracker = VelocityTracker.obtain()
 velocityTracker.addMovement(event)
 ```
-> 获取速度
+
 ```
+获取速度
 velocityTracker.computeCurrentVelocity(100)
 xVelocity = velocityTracker.getXVelocity()
 yVelocity = velocityTracker.getYVelocity()
 ```
-> 计算公式：速度 = （终点位置 - 起点位置）/ 时间段 （单位：ms）
-> 回收内存
+计算公式：速度 = （终点位置 - 起点位置）/ 时间段 （单位：ms）
+
 ```
+回收内存
 velocityTracker.clear()
 velocityTracker/recycle()
 ```
@@ -51,20 +53,36 @@ velocityTracker/recycle()
 - Scroller
 > 弹性滑动对象
 
-## View 的滑动
+## 滑动
+------ 
 
-## View 弹性滑动
+## 事件分发机制 (MotionEvent的事件分发过程)
 
-## View 事件分发机制 (MotionEvent的事件分发过程)
-- 点击事件的传递规则
-> 通过三个方法共同完成：
 ```
+> 通过三个方法共同完成：
 dispatchTouchEvent(ev: MotionEvent): Boolean
 onInterceptTouchEvent(ev: MotionEvent): Boolean
 onTouchEvent(ev: MotionEvent): Boolean
-```
 
-## View 滑动冲突
+> 拦截关系（伪代码）
+private boolean dispatchTouchEvent（MotionEvent ev) {
+    boolean consume = false;
+    if (onInterceptTouchEvent(ev)) {
+        consume = onTouchEvent();
+    } else 
+        consume = child.dispatchTouchEvent(ev);
+    return consume;
+}
+
+```
+- 总结
+1. Activity对事件的分发： Activity -> Window -> Decor View（底层容器，继承自FrameLayout，父View） -> 子View （通过setContentView设置的View，又称顶级View，根View，一般是ViewGroup）
+2. 顶级View 对事件的分发（上述伪代码）
+3. 消费顺序： onTouchListener > onTouchEvent > onLongClickListener > onClickListener
+4. 子View 可以调用 requestDisallowInterceptTouchEvent 方法，用于阻止父View的 onInterveptTouchEvent拦截事件，使其强制返回false（ACTION_DOWN事件除外）
+
+
+## 滑动冲突
 
 
 
