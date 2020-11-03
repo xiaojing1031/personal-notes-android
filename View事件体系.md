@@ -1,5 +1,7 @@
 # View 事件体系
 
+------ 
+
 ## 基础
 
 ### 
@@ -53,7 +55,10 @@ velocityTracker/recycle()
 - Scroller
     - 弹性滑动对象
 
+------ 
+
 ## 滑动
+
 ------ 
 
 ## 事件分发机制 (MotionEvent的事件分发过程)
@@ -81,6 +86,7 @@ private boolean dispatchTouchEvent（MotionEvent ev) {
 3. 消费顺序： onTouchListener > onTouchEvent > onLongClickListener > onClickListener
 4. 子View 可以调用 requestDisallowInterceptTouchEvent 方法，用于阻止父View的 onInterveptTouchEvent拦截事件，使其强制返回false（ACTION_DOWN事件除外）
 
+------ 
 
 ## 滑动冲突
 - 常见场景
@@ -94,3 +100,4 @@ private boolean dispatchTouchEvent（MotionEvent ev) {
 
 - 父容器不能拦截ACTION_DOWN的原因是因为ACTION_DOWN事件不受 FLAG_DISALLOW_INTERCEPT这个标记位的控制；所以一旦父容器拦截此动作，那么所有事件都无法传递到子元素
 
+------ 
