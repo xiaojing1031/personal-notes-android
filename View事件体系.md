@@ -1,8 +1,7 @@
 # View 事件体系
 
------- 
 
-## 基础
+## 1. 基础
 
 ### 
 - View 是android 中所有控件的基类
@@ -57,11 +56,11 @@ velocityTracker/recycle()
 
 ------ 
 
-## 滑动
+## 2. 滑动
 
------- 
 
-## 事件分发机制 (MotionEvent的事件分发过程)
+
+## 3. 事件分发机制 (MotionEvent的事件分发过程)
 
 ```
 > 通过三个方法共同完成：
@@ -88,7 +87,7 @@ private boolean dispatchTouchEvent（MotionEvent ev) {
 
 ------ 
 
-## 滑动冲突
+## 4. 滑动冲突
 - 常见场景
     - 外部、内部滑动不一致
     - 外部、内部滑动一致

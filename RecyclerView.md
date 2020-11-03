@@ -21,14 +21,32 @@
 - 在主类使用RecyclerView：
 ```
 val layoutManager = LinearLayoutManager(this)
-layoutManager.orientation = LinearLayoutManager.HORIZONTAL 
+layoutManager.orientation = LinearLayoutManager.HORIZONTAL
+
 // 瀑布流: val layoutManager = StaggeredGridLayoutManager(3, StaggeredGridLayoutManager.VERTICAL)
 // 网格： GridLayoutManager
+
 recyclerView.layoutManager = layoutManager
 val adapter = xxAdapter(data) // data to show
 recyclerView.adapter = adapter
 ```
 - 点击事件：需自己给子项具体的View注册点击事件--> 在onCreateViewHolder()中实现（不同于ListView）
+- notifyItemChanged：RecyclerView的某个item里的数据更新会导致这个item重新绑定，则item中所有View均会刷新
 
 ## Epoxy.RecyclerView
+- 主要作用：
+1. 简化RecyclerView多ViewType的开发
+2. 当我们申明数据变化，Epoxy会自动帮忙找出差别后做对应的更新
+    - 对比于RecyclerView中的notifyItemChanged，Epoxy的局部更新性能更高
+    - 我们只需要：绑定数据与view(定义数据如何显示)；按顺序申明数据；数据变化后重新申明数据
+
+- 2个组件
+1. EpoxyModel: 描述子view在RecyclerView中的显示
+2. EpoxyController：确定哪个item会显示在RecyclerView中
+
+- 创建EpoxyModel
+1. 通过自定义View
+2. 通过DataBinding
+3. 通过ViewHolder
+4. Kotlin可以通过data class直接继承EpoxyModel（非官方方式）
 
