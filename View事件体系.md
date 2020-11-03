@@ -23,8 +23,8 @@ ACTION_MOVE：手指在屏幕上移动
 ACTION_UP：手指从屏幕松开的一瞬间
 ```
 - TouchSlop：系统能识别出的被认为是滑动的最小距离
-> 常量，和设备有关
-> 获取方法： ViewConfiguration.get(getContext()).getScaledTouchSlop()
+    - 常量，和设备有关
+    - 获取方法： ViewConfiguration.get(getContext()).getScaledTouchSlop()
 
 ### VelocityTracker, GestureDetector & Scroller
 - VelocityTracker: 追踪手指在滑动中的速度
@@ -48,10 +48,10 @@ velocityTracker.clear()
 velocityTracker/recycle()
 ```
 - GestureDector
-> 手势检测：用户的单击、滑动、长按、双击等行为
+    - 手势检测：用户的单击、滑动、长按、双击等行为
 
 - Scroller
-> 弹性滑动对象
+    - 弹性滑动对象
 
 ## 滑动
 ------ 
@@ -83,7 +83,14 @@ private boolean dispatchTouchEvent（MotionEvent ev) {
 
 
 ## 滑动冲突
+- 常见场景
+    - 外部、内部滑动不一致
+    - 外部、内部滑动一致
+    - 上两种情况嵌套
+- ViewPager作用：内部做过滑动处理，配合Fragment，可实现左右切换页面，且每个页面内又可上下滑动 （解决场景1）
+- 不采用ViewPager时：
+1. 外部拦截法：重写父容器onInterceptTouchEvent方法，在MotionEvent.ACTION_MOVE下做拦截（不能在ACTION_DOWN做拦截）
+2. 内部拦截法：父容器不拦截任何事件，全传递给子元素。如果子元素需要则直接消耗掉，否则就交给父容器。需重写子元素dispatchTouchEvent方法，并结合parent.requestDisallowInterceptTouchEvent(true/false)
 
-
-
+- 父容器不能拦截ACTION_DOWN的原因是因为ACTION_DOWN事件不受 FLAG_DISALLOW_INTERCEPT这个标记位的控制；所以一旦父容器拦截此动作，那么所有事件都无法传递到子元素
 
