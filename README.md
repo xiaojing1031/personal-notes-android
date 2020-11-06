@@ -12,4 +12,8 @@
 
 [RecyclerView](https://github.com/xiaojing1031/personal-notes-android-/blob/main/RecyclerView.md#recyclerview)
 
-    
+[Jetpack主要组件](https://github.com/xiaojing1031/personal-notes-android/blob/main/Jetpack%E5%BC%80%E5%8F%91%E7%BB%84%E4%BB%B6.md#jetpack-%E4%B8%BB%E8%A6%81%E6%A1%86%E6%9E%B6--%E7%BB%84%E4%BB%B6)
+1. ViewModel
+2. Lifecycles
+3. LiveData
+4. ORM 框架：Room
