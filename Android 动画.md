@@ -29,7 +29,7 @@
 // Eg of changing height of the view (animation to close a layout)
 val layoutP = xxx.layoutParams as LayoutParams
 val height = xxx.height
-ValueAnimator.offFloat(1f, 0f).apply {
+ValueAnimator.ofFloat(1f, 0f).apply {
     duration = xx
     interpolator = xx
     addUpdateListener { value -> 
@@ -37,6 +37,18 @@ ValueAnimator.offFloat(1f, 0f).apply {
         xxx.layoutParams = layoutP
     }
 }.start()
+
+// rotation 
+ValueAnimator.ofInt(0, 360).apply {
+    duration = xx
+    repeatCount = xx
+    repeatMode = xx
+    interpolator = xx
+    addUpdateListener { value -> 
+        imageView.rotation = ((value.animatedValue as Int) * height).toFloat()
+    }
+}.start()
+
 ```
 
 
