@@ -9,9 +9,9 @@
 
 | 类型 | 标签 |
 | :----: | :----: |
-| ValueAnimator | "<animator>" |
-| ObjectAnimator (继承自ValueAnimator) | "<ObjectAnimator>" |
-| AnimatorSet (动画集合) | "<set>" (属性：android: ordering = "together" / "sequentially") |
+| ValueAnimator | &lt; animator &gt; |
+| ObjectAnimator (继承自ValueAnimator) | &lt; ObjectAnimator &gt;|
+| AnimatorSet (动画集合) | &lt; set &gt; (属性：android: ordering = "together" / "sequentially") |
 
 属性动画监听
 - AnimatorListener：监听动画开始、结束、取消、重复播放
@@ -57,10 +57,11 @@ ValueAnimator.ofInt(0, 360).apply {
 
 需定义在 res/anim/目录下
 | 名称 | 标签 | 子类 | 
-| 平移动画 | <translate> | TranslateAnimation | 
-| 缩放动画 | <scale | ScaleAnimation |
-| 旋转动画 | <rotate> | RotateAnimation | 
-| 透明度动画 | <alpha> | AlphaAnimation |
+| :----: | :----: | :----: | 
+| 平移动画 | &lt; translate &gt; | TranslateAnimation | 
+| 缩放动画 | &lt; scale &gt; | ScaleAnimation |
+| 旋转动画 | &lt; rotate &gt; | RotateAnimation | 
+| 透明度动画 | &lt; alpha &gt; | AlphaAnimation |
 
 
 View动画其他特殊使用场景
