@@ -9,9 +9,9 @@
 
 | 类型 | 标签 |
 | :----: | :----: |
-| ValueAnimator | <animator> |
-| ObjectAnimator（继承自ValueAnimator）| <ObjectAnimator> |
-| AnimatorSet（动画集合）| <set> （属性：android: ordering = "together" / "sequentially") |
+| ValueAnimator | "<animator>" |
+| ObjectAnimator (继承自ValueAnimator) | "<ObjectAnimator>" |
+| AnimatorSet (动画集合) | "<set>" (属性：android: ordering = "together" / "sequentially") |
 
 属性动画监听
 - AnimatorListener：监听动画开始、结束、取消、重复播放
