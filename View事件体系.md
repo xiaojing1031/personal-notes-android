@@ -78,12 +78,13 @@ private boolean dispatchTouchEvent（MotionEvent ev) {
     return consume;
 }
 ```
-<table width="1000px" border="1">
-    <tr>
-        <td align="center"> <img src="https://github.com/xiaojing1031/personal-notes-android/raw/main/%E7%BB%98%E5%9B%BE%E7%AC%94%E8%AE%B0%E8%B5%84%E6%BA%90/View%20%E4%BA%8B%E4%BB%B6%E5%88%86%E5%8F%91%E6%B5%81%E7%A8%8B%E5%9B%BE.png">
-       </td>
-    </tr>
-</table>
+.aligncenter {
+    clear: both;
+    display: block;
+    margin: auto;
+}
+
+<img src="https://github.com/xiaojing1031/personal-notes-android/raw/main/%E7%BB%98%E5%9B%BE%E7%AC%94%E8%AE%B0%E8%B5%84%E6%BA%90/View%20%E4%BA%8B%E4%BB%B6%E5%88%86%E5%8F%91%E6%B5%81%E7%A8%8B%E5%9B%BE.png" width="600" class="aligncenter>
 
 - 总结
 1. Activity对事件的分发： Activity -> Window -> Decor View（底层容器，继承自FrameLayout，父View） -> 子View （通过setContentView设置的View，又称顶级View，根View，一般是ViewGroup）
