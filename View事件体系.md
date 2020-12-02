@@ -77,13 +77,14 @@ velocityTracker/recycle()
 - View 动画是对View 的影像做操作，并不能真正改变View 的位置参数，包括宽 / 高
 - 如需保留动画后的状态，fillAfter 的属性需要设置为true
 - 因为本身位置参数未变，如果View 有设置点击事件，新位置无法触发onClick 事件
-- 
+
 | 属性 | 示例 | 
 | :----: | :----: |
 | translationX |  向右平移：toXDelta: "100"; 向左平移：toXDelta: "-100"|
 | translationY |  向下平移：toYDelta: "100"; 向上平移：toYDelta: "-100"  |
 | 属性动画向右平移 | ObjectAnimator.ofFloat(targetView, "trranslationX", 0, 100).setDuration(100).start() |
-| 传统动画向右平移 | 
+
+- 传统动画向右平移
 ```
 <translate 
     android:duration="100"
@@ -92,7 +93,6 @@ velocityTracker/recycle()
     android:interpolator="xxx"
 />
 ```
-|
 
 ### 改变布局参数
 - View 向右平移100px示例：
