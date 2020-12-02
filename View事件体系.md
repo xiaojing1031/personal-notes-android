@@ -56,9 +56,54 @@ velocityTracker/recycle()
 
 ------ 
 
-## 2. 滑动
+## 2. 滑动3种实现方式
+- 三种实现方式
+1. View 本身提供的scrollTo / scrollBy 方法
+2. 通过动画给View 施加平移效果实现滑动
+3. 通过改变View 的LayoutParams 使得View重新布局从而实现滑动
 
+### 使用 scrollTo / scrollBy
+| 关键字 | 作用 |
+| :----: | :----: |
+| scrollBy(int x, int y) | 基于当前位置的相对滑动；内部调用scrollTo方法 |
+| scrollTo(int x, int y) | 基于所传参数的绝对滑动 |
+| mScrollX | View内容相对于View本身左边缘水平上的距离，向左滑动mScrollX为正|
+| mScrollY | View内容相对于View本身上边缘垂直上的距离，向上滑动mScrollY为正|
+| mScrollX=0，mScrollY=0 或 scrollTo(0, 0) | View内容和View完全重合 (原始状态) |
 
+### 使用动画
+- 主要操作View的 translationX 和 translationY 属性
+- 既可采用传统View 动画，也可采用属性动画 [View 动画具体查看](https://github.com/xiaojing1031/personal-notes-android/blob/main/Android%20%E5%8A%A8%E7%94%BB.md#android-%E5%8A%A8%E7%94%BB)
+- View 动画是对View 的影像做操作，并不能真正改变View 的位置参数，包括宽 / 高
+- 如需保留动画后的状态，fillAfter 的属性需要设置为true
+- 因为本身位置参数未变，如果View 有设置点击事件，新位置无法触发onClick 事件
+- 
+| 属性 | 示例 | 
+| :----: | :----: |
+| translationX |  向右平移：toXDelta: "100"; 向左平移：toXDelta: "-100"|
+| translationY |  向下平移：toYDelta: "100"; 向上平移：toYDelta: "-100"  |
+| 属性动画向右平移 | ObjectAnimator.ofFloat(targetView, "trranslationX", 0, 100).setDuration(100).start() |
+| 传统动画向右平移 | 
+```
+<translate 
+    android:duration="100"
+    android:fromXDelta="0"
+    android:toXDelta = "100"
+    android:interpolator="xxx"
+/>
+```
+|
+
+### 改变布局参数
+- View 向右平移100px示例：
+```
+val layoutParams = xxx.layoutParams as MarginLayoutParams
+layoutPrams.width += 100
+layoutParams.rightMargin += 100
+xxx.layoutParams = layoutParams
+```
+
+------ 
 
 ## 3. 事件分发机制 (MotionEvent的事件分发过程)
 
@@ -79,7 +124,7 @@ private boolean dispatchTouchEvent（MotionEvent ev) {
 }
 ```
 
-<img src="https://github.com/xiaojing1031/personal-notes-android/raw/main/%E7%BB%98%E5%9B%BE%E7%AC%94%E8%AE%B0%E8%B5%84%E6%BA%90/View%20%E4%BA%8B%E4%BB%B6%E5%88%86%E5%8F%91%E6%B5%81%E7%A8%8B%E5%9B%BE.png" align="center" width="600">
+<img src="https://github.com/xiaojing1031/personal-notes-android/raw/main/%E7%BB%98%E5%9B%BE%E7%AC%94%E8%AE%B0%E8%B5%84%E6%BA%90/View%20%E4%BA%8B%E4%BB%B6%E5%88%86%E5%8F%91%E6%B5%81%E7%A8%8B%E5%9B%BE.png" align="center" width="700">
 
 - 总结
 1. Activity对事件的分发： Activity -> Window -> Decor View（底层容器，继承自FrameLayout，父View） -> 子View （通过setContentView设置的View，又称顶级View，根View，一般是ViewGroup）

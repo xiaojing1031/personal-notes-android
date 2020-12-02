@@ -53,7 +53,7 @@ ValueAnimator.ofInt(0, 360).apply {
 ```
 
 
-## View 动画
+## 传统的 View 动画
 
 需定义在 res/anim/目录下
 | 名称 | 标签 | 子类 | 
