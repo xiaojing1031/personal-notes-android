@@ -77,12 +77,12 @@ private boolean dispatchTouchEvent（MotionEvent ev) {
         consume = child.dispatchTouchEvent(ev);
     return consume;
 }
-
 ```
+
 - 总结
 1. Activity对事件的分发： Activity -> Window -> Decor View（底层容器，继承自FrameLayout，父View） -> 子View （通过setContentView设置的View，又称顶级View，根View，一般是ViewGroup）
 2. 顶级View 对事件的分发（上述伪代码）
-3. 消费顺序： onTouchListener > onTouchEvent > onLongClickListener > onClickListener
+3. 消费顺序优先级： onTouchListener (调用setOnTouchListener() 时必须覆盖onTouch()的返回值 > onTouchEvent(内部onLongClickListener , onClickListener一个为true，onTouchEvent()就会返回true消耗此事件)
 4. 子View 可以调用 requestDisallowInterceptTouchEvent 方法，用于阻止父View的 onInterveptTouchEvent拦截事件，使其强制返回false（ACTION_DOWN事件除外）
 
 ------ 
@@ -94,7 +94,7 @@ private boolean dispatchTouchEvent（MotionEvent ev) {
     - 上两种情况嵌套
 - ViewPager作用：内部做过滑动处理，配合Fragment，可实现左右切换页面，且每个页面内又可上下滑动 （解决场景1）
 - 不采用ViewPager时：
-1. 外部拦截法：重写父容器onInterceptTouchEvent方法，在MotionEvent.ACTION_MOVE下做拦截（不能在ACTION_DOWN做拦截）
+1. 外部拦截法：重写父容器onInterceptTouchEvent方法，在MotionEvent.ACTION_MOVE下做拦截（不能在 ACTION_DOWN 做拦截）
 2. 内部拦截法：父容器不拦截任何事件，全传递给子元素。如果子元素需要则直接消耗掉，否则就交给父容器。需重写子元素dispatchTouchEvent方法，并结合parent.requestDisallowInterceptTouchEvent(true/false)
 
 - 父容器不能拦截ACTION_DOWN的原因是因为ACTION_DOWN事件不受 FLAG_DISALLOW_INTERCEPT这个标记位的控制；所以一旦父容器拦截此动作，那么所有事件都无法传递到子元素
