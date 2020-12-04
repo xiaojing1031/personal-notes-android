@@ -73,7 +73,7 @@ velocityTracker/recycle()
 
 ### 使用动画
 - 主要操作View的 translationX 和 translationY 属性
-- 既可采用传统View 动画，也可采用属性动画 [View 动画具体查看](https://github.com/xiaojing1031/personal-notes-android/blob/main/Android%20%E5%8A%A8%E7%94%BB.md#android-%E5%8A%A8%E7%94%BB)
+- 既可采用传统View 动画，也可采用属性动画 [View 动画具体查看](https://github.com/xiaojing1031/personal-notes-android/blob/main/notes/Android%20%E5%8A%A8%E7%94%BB.md#android-%E5%8A%A8%E7%94%BB)
 - View 动画是对View 的影像做操作，并不能真正改变View 的位置参数，包括宽 / 高
 - 如需保留动画后的状态，fillAfter 的属性需要设置为true
 - 因为本身位置参数未变，如果View 有设置点击事件，新位置无法触发onClick 事件
@@ -146,7 +146,9 @@ private boolean dispatchTouchEvent（MotionEvent ev) {
 }
 ```
 
-<img src="https://github.com/xiaojing1031/personal-notes-android/raw/main/notes-chart/%E7%BB%98%E5%9B%BE%E7%AC%94%E8%AE%B0%E8%B5%84%E6%BA%90/View%20%E4%BA%8B%E4%BB%B6%E5%88%86%E5%8F%91%E6%B5%81%E7%A8%8B%E5%9B%BE.png" align="center" width="700">
+<img src="https://github.com/xiaojing1031/personal-notes-android/raw/main/notes-chart/View%20%E4%BA%8B%E4%BB%B6%E5%88%86%E5%8F%91%E6%B5%81%E7%A8%8B%E5%9B%BE.png" align="center" width="700">
+
+
 
 - 总结
 1. Activity对事件的分发： Activity -> Window -> Decor View（底层容器，继承自FrameLayout，父View） -> 子View （通过setContentView设置的View，又称顶级View，根View，一般是ViewGroup）
