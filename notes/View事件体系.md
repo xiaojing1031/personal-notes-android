@@ -65,10 +65,10 @@ velocityTracker/recycle()
 ### 使用 scrollTo / scrollBy
 | 关键字 | 作用 |
 | :----: | :----: |
-| scrollBy(int x, int y) | 基于当前位置的相对滑动；内部调用scrollTo方法 |
-| scrollTo(int x, int y) | 基于所传参数的绝对滑动 |
-| mScrollX | View内容相对于View本身左边缘水平上的距离，向左滑动mScrollX为正|
-| mScrollY | View内容相对于View本身上边缘垂直上的距离，向上滑动mScrollY为正|
+| scrollBy(int x, int y) | 基于当前位置的相对滑动<br>内部调用scrollTo(mScroller+x, mScroller+y)方法 |
+| scrollTo(int x, int y) | 基于所传参数的绝对滑动<br>x > 0，向左滑；y > 0，向上滑 |
+| mScrollX | View内容相对于View本身左边缘水平上的距离，向左滑动mScrollX为正<br>通过getScrollX() 获得|
+| mScrollY | View内容相对于View本身上边缘垂直上的距离，向上滑动mScrollY为正<br>通过getScrollY() 获得|
 | mScrollX=0，mScrollY=0 或 scrollTo(0, 0) | View内容和View完全重合 (原始状态) |
 
 ### 使用动画
@@ -105,7 +105,29 @@ xxx.layoutParams = layoutParams
 
 ------ 
 
-## 3. 事件分发机制 (MotionEvent的事件分发过程)
+## 3. 弹性滑动
+- 使用View 的scrollTo / scrollBy 进行滑动时，其过程是瞬间的；使用弹性滑动通过Scroller来实现有过度效果的滑动
+- 统一思想：将一次大的滑动分成若干次小的滑动并在一段时间内完成
+- 具体方法有多种： Scroller、Handler#postDelayed、Thread#sleep
+
+### Scroller
+- Scroller本身无法让View 弹性滑动，需借助View 的compteScroll方法
+1. 重写compteScroll()：获得Scroller的curX和curY，然后通过scrollerTo方法实现滑动；调用postInvalidate() 进行二次重绘，循环至滑动过程结束
+2. 通过View 的invalidate() 导致View 重绘
+3. 在View 的draw方法会调用computeScroller
+
+### [通过动画](https://github.com/xiaojing1031/personal-notes-android/blob/main/Android%20%E5%8A%A8%E7%94%BB.md#android-%E5%8A%A8%E7%94%BB)
+
+### 使用延迟策略
+- 通过发送一系列延迟消息达到渐近式效果
+- 使用Handler 或View 的postDelayed 方法
+1. 不断延迟发送消息，在消息中进行View 的滑动
+- 使用线程的sleep方法
+1. 在while循环中不断滑动View 和Sleep
+
+------ 
+
+## 4. 事件分发机制 (MotionEvent的事件分发过程)
 
 ```
 > 通过三个方法共同完成：
