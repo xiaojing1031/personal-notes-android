@@ -52,9 +52,10 @@ Object BaseApi {
             .build()
         }
 }
-
-- The call adapter handles threads -> RxJava
+- 异步处理
+1. The call adapter handles threads -> RxJava
 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
+2. 默认情况和Kotlin配合使用协程
 
 ```
 ```
