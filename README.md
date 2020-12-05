@@ -19,7 +19,7 @@
 2. [RecyclerView](https://github.com/xiaojing1031/personal-notes-android/blob/main/RecyclerView.md#recyclerview-1)
 3. [ListView](https://github.com/xiaojing1031/personal-notes-android/blob/main/RecyclerView.md#listview)
 ---
-[Retrofit 网络请求](https://github.com/xiaojing1031/personal-notes-android/blob/main/notes/%E7%BD%91%E7%BB%9C%E8%AF%B7%E6%B1%82.md#retrofit)
+[Retrofit 网络请求](https://github.com/xiaojing1031/personal-notes-android/blob/main/notes/Retrofit%E7%BD%91%E7%BB%9C%E8%AF%B7%E6%B1%82.md#retrofit)
 
 [Kotlin 协程](https://github.com/xiaojing1031/personal-notes-android/blob/main/notes/Kotlin%20%E5%8D%8F%E7%A8%8B.md#kotlin-%E5%8D%8F%E7%A8%8B)
 
