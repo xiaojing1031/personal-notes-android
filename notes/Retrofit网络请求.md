@@ -8,6 +8,14 @@
 
 结合Kotlin协程和Moshi
 Retrofit + OkHttp + Moshi (Json/Gson)
+- OkHttp
+1. OkHttp 是关于网络请求的第三方类库，封装了网络请求的get、post等操作的底层实现
+- Retrofit
+1. Retrofit 是一个RESTful的HTTP网络请求框架，封装了OkHttp的底层实现。它是通过注解配置网络参数的，支持多种数据的解析和序列化（Gson、Json、Moshi、xml等）。和仅使用OkHttp相比，请求接口和数据解析更加简洁了
+- Gson和Moshi：
+1. json序列化工具
+2. 使用：序列化一个java object 到json， 或者将json 映射到java object里面
+
 ```
 - Api接口 & 实例方法
 interface UserApi {
