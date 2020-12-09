@@ -1,5 +1,8 @@
 ## 自定义 View
 ### 视图层次结构
+![avatar](https://github.com/xiaojing1031/personal-notes-android/raw/main/notes-chart/Android%20%E8%A7%86%E5%9B%BE%E5%B1%82%E7%BA%A7.png)
+
+
 
 ### MeasureSpec 和 LayoutParams
 - 顶级View (DecorView)：其MeasureSpec由窗口尺寸和其自身LayoutParams共同决定
