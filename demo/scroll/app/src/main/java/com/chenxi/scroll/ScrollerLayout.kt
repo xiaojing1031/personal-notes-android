@@ -5,7 +5,7 @@ import android.util.AttributeSet
 import android.view.View
 import android.widget.FrameLayout
 import android.widget.Scroller
-import kotlinx.android.synthetic.main.scroller_layout.view.*
+import androidx.appcompat.widget.AppCompatTextView
 
 class ScrollerLayout: FrameLayout {
     constructor(context: Context): super(context, null)
@@ -15,12 +15,19 @@ class ScrollerLayout: FrameLayout {
         attributeSet,
         defStyle
     ) {
+        init()
+    }
+
+    private lateinit var scrollText: AppCompatTextView
+    private fun init() {
         View.inflate(context, R.layout.scroller_layout, this)
+        scrollText = findViewById(R.id.scrollerText)
+        scrollText.text = "scroll me"
     }
 
     private val mScroller = Scroller(this.context)
     fun smoothScrollTo(destX: Int, destY: Int) {
-        val scrollX = scrollerView.scrollX
+        val scrollX = scrollText.scrollX
         val deltaX = destX - scrollX
         mScroller.startScroll(scrollX, 0, deltaX, 0, 1000)
         invalidate()

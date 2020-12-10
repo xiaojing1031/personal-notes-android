@@ -13,14 +13,8 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        scrollerLayout.visibility = View.VISIBLE
+//        scrollerLayout.smoothScrollTo(0, 0)
     }
-
-    private val scrollerView = ScrollerLayout(this)
-    override fun onCreateView(name: String, context: Context, attrs: AttributeSet): View? {
-        return super.onCreateView(name, context, attrs)
-        scrollerView.smoothScrollTo(0, 0)
-
-    }
-
 
 }
