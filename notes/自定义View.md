@@ -11,7 +11,8 @@
 2. EXACTLY
 3. AT_MODE
 - SpecSize：指在某种测量模式下的规格大小
-- MeasureSpec一旦确定，onMeasure中就可以确定View的测量宽高
+- MeasureSpec一旦确定，onMeasure中就可以确定View的测量宽高  
+
 | View | MeasureSpec确定方式 |
 | :----: | :----: |
 | 顶级View (DecorView) | 其MeasureSpec由窗口尺寸和其自身LayoutParams共同决定 |

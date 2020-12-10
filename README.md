@@ -8,6 +8,12 @@
 5. [滑动冲突](https://github.com/xiaojing1031/personal-notes-android/blob/main/notes/View%E4%BA%8B%E4%BB%B6%E4%BD%93%E7%B3%BB.md#4-%E6%BB%91%E5%8A%A8%E5%86%B2%E7%AA%81)
 ---
 
+[自定义View](https://github.com/xiaojing1031/personal-notes-android/blob/main/notes/%E8%87%AA%E5%AE%9A%E4%B9%89View.md#%E8%87%AA%E5%AE%9A%E4%B9%89-view)
+1. [View视图层次结构](https://github.com/xiaojing1031/personal-notes-android/blob/main/notes/%E8%87%AA%E5%AE%9A%E4%B9%89View.md#%E8%A7%86%E5%9B%BE%E5%B1%82%E6%AC%A1%E7%BB%93%E6%9E%84)
+2. [MeasureSpec 和 LayoutParams](https://github.com/xiaojing1031/personal-notes-android/blob/main/notes/%E8%87%AA%E5%AE%9A%E4%B9%89View.md#measurespec-%E5%92%8C-layoutparams)
+3. [View 绘制流程](https://github.com/xiaojing1031/personal-notes-android/blob/main/notes/%E8%87%AA%E5%AE%9A%E4%B9%89View.md#view-%E7%BB%98%E5%88%B6%E6%B5%81%E7%A8%8B)
+---
+
 [Android 动画](https://github.com/xiaojing1031/personal-notes-android/blob/main/notes/Android%20%E5%8A%A8%E7%94%BB.md#android-%E5%8A%A8%E7%94%BB)
 1. [属性动画](https://github.com/xiaojing1031/personal-notes-android-/blob/main/notes/Android%20%E5%8A%A8%E7%94%BB.md#%E5%B1%9E%E6%80%A7%E5%8A%A8%E7%94%BB)
 2. [View动画](https://github.com/xiaojing1031/personal-notes-android-/blob/main/notes/Android%20%E5%8A%A8%E7%94%BB.md#view-%E5%8A%A8%E7%94%BB)
