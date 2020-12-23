@@ -18,7 +18,7 @@
 | coroutineScope、supervisorScope | 启动新协程，使用父协程的job |
 
 ### CoroutineScope（一个接口）
-1. 是一个作用范围，可以通过CorouutineScope的扩展函数创建一个协程。
+1. 是一个作用范围，可以通过CorouutineScope的扩展函数创建一个协程。    
     viewModelScope、lifecycleScope：当作用范围被取消，它内部的协程也会被取消  
     GlobalScope：全局性的，无法通过自身取消内部协程  
 2. 内部方法lauch函数：返回一个Job对象，可通过Job管理协程   
@@ -40,9 +40,9 @@
 | UNDISPATCHED | 立即在当前线程执行，直到遇到第一个挂起点（可能切线程）| 
 
 ### suspend CoroutineScope.() -> Unit 协程体
-1. lambada 表达式，协程中要执行的代码块，即lauynch函数闭包中的代码
+1. lambada 表达式，协程中要执行的代码块，即launch函数闭包中的代码
 ```
-CoroutineScope.launch(Dispatchers.Default) {
+CoroutineScope.launch(Dispatchers.IO) {
     // 创建一个协程并启动它
         // 闭包内为协程体
 }
@@ -50,7 +50,7 @@ CoroutineScope.launch(Dispatchers.Default) {
 ```
 
 ### Dispatchers调度器
-1. 协程中提供的线程调度器，用来切换线程，指定协程所运行的线程
+1. 协程中提供的线程调度器，用来切换线程，指定协程所运行的线程     
 | 4种类型 | 作用 | 
 | :----: | :----: |
 | DEFAULT | 默认调度器，适合CPU密集型任务调度器 比如逻辑计算 |
