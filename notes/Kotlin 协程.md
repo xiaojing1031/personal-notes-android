@@ -50,13 +50,15 @@ CoroutineScope.launch(Dispatchers.IO) {
 ```
 
 ### Dispatchers调度器
-1. 协程中提供的线程调度器，用来切换线程，指定协程所运行的线程     
+1. 协程中提供的线程调度器，用来切换线程，指定协程所运行的线程                
+                     
 | 4种类型 | 作用 | 
 | :----: | :----: |
 | DEFAULT | 默认调度器，适合CPU密集型任务调度器 比如逻辑计算 |
 | Main |  UI调度器 | 
 | IO | IO调度器，适合IO密集型任务调度器 比如读写文件，网络请求等 |
 | Unconfined | 无限制调度器，对协程执行的线程不做限制，协程恢复时可以在任意线程 | 
+
 
 2. 所有调度器都是CoroutineDispatcher子类，CoroutineDispatcher 是一个抽象类
 3. CoroutineDispatcher 继承自 AbstractCoroutineContextElement (Element接口的一个抽象实现类)；Element 又实现CoroutineContext 接口。所以调度器本身既是一个CoroutineContext，也可以作为CoroutineContext集合的元素存放其中。

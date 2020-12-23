@@ -30,9 +30,9 @@
 [Kotlin 协程](https://github.com/xiaojing1031/personal-notes-android/blob/main/notes/Kotlin%20%E5%8D%8F%E7%A8%8B.md#kotlin-%E5%8D%8F%E7%A8%8B)
 
 [Handler运行机制](https://github.com/xiaojing1031/personal-notes-android/blob/main/notes/Android%E6%B6%88%E6%81%AF%E6%9C%BA%E5%88%B6.md#android-%E6%B6%88%E6%81%AF%E6%9C%BA%E5%88%B6)
-- [suspend](https://github.com/xiaojing1031/personal-notes-android/blob/main/notes/Kotlin%20%E5%8D%8F%E7%A8%8B.md#suspend%E4%BF%AE%E9%A5%B0%E7%9A%84%E5%87%BD%E6%95%B0%E6%AF%94%E6%99%AE%E9%80%9A%E5%87%BD%E6%95%B0%E5%A4%9A%E4%B8%A4%E4%B8%AA%E6%93%8D%E4%BD%9C)
-- [CoroutineScope](https://github.com/xiaojing1031/personal-notes-android/blob/main/notes/Kotlin%20%E5%8D%8F%E7%A8%8B.md#coroutinescope%E4%B8%80%E4%B8%AA%E6%8E%A5%E5%8F%A3)
-- [Dispatchers调度器](https://github.com/xiaojing1031/personal-notes-android/blob/main/notes/Kotlin%20%E5%8D%8F%E7%A8%8B.md#dispatchers%E8%B0%83%E5%BA%A6%E5%99%A8)
+1.  [suspend](https://github.com/xiaojing1031/personal-notes-android/blob/main/notes/Kotlin%20%E5%8D%8F%E7%A8%8B.md#suspend%E4%BF%AE%E9%A5%B0%E7%9A%84%E5%87%BD%E6%95%B0%E6%AF%94%E6%99%AE%E9%80%9A%E5%87%BD%E6%95%B0%E5%A4%9A%E4%B8%A4%E4%B8%AA%E6%93%8D%E4%BD%9C)
+2.  [CoroutineScope](https://github.com/xiaojing1031/personal-notes-android/blob/main/notes/Kotlin%20%E5%8D%8F%E7%A8%8B.md#coroutinescope%E4%B8%80%E4%B8%AA%E6%8E%A5%E5%8F%A3)
+3.  [Dispatchers调度器](https://github.com/xiaojing1031/personal-notes-android/blob/main/notes/Kotlin%20%E5%8D%8F%E7%A8%8B.md#dispatchers%E8%B0%83%E5%BA%A6%E5%99%A8)
 
 ---
 
