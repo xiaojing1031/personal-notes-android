@@ -29,7 +29,7 @@
 
 [Kotlin 协程](https://github.com/xiaojing1031/personal-notes-android/blob/main/notes/Kotlin%20%E5%8D%8F%E7%A8%8B.md#kotlin-%E5%8D%8F%E7%A8%8B)
 
-[Handler运行机制]()
+[Handler运行机制](https://github.com/xiaojing1031/personal-notes-android/blob/main/notes/Android%E6%B6%88%E6%81%AF%E6%9C%BA%E5%88%B6.md#android-%E6%B6%88%E6%81%AF%E6%9C%BA%E5%88%B6)
 
 ---
 
