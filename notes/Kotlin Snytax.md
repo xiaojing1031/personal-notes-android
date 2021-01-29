@@ -1,5 +1,0 @@
-## Kotlin Snytax
-
-### lazy initialization
-
-
